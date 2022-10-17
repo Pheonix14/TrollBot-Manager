@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config/config.json');
+const { token, admins } = require('./config/config.json');
 require( 'console-stamp' )( console, {
     format: ':date(yyyy/mm/dd HH:MM:ss).yellow :label(1)'
 } );
@@ -36,8 +36,11 @@ client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
 	const command = client.commands.get(interaction.commandName);
+  
 
   await interaction.deferReply();
+
+if (!admins.includes(interaction.user.id)) return interaction.editReply("You Are Not A TrollBot Admin")
   
 	if (!command) return;
 
@@ -45,7 +48,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.editReply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
 
