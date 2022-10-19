@@ -1,8 +1,8 @@
 {
-  "clientId": "1009460258382561330",
-  "guildId": "970639355607674931",
-  "token": "MTAwOTQ2MDI1ODM4MjU2MTMzMA.GZKNVA.MBiMj-WnWpoYASXMAxSXxw5L2og60w66sC_xlQ",
-  "MongoURI": "mongodb+srv://trollbot:trollbot2635361@cluster0.1vltbiw.mongodb.net/?retryWrites=true&w=majority",
+  "clientId": "",
+  "guildId": "",
+  "token": "",
+  "MongoURI": "",
   "admins": ["674145228063768587"],
   "owner": "674145228063768587"
 }

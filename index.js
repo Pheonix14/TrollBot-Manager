@@ -55,4 +55,17 @@ if (!admins.includes(interaction.user.id)) return interaction.editReply("You Are
 require("./refresh-commands.js");
 require("./database/connect.js");
 
+const express = require('express')
+const app = express()
+const port = 1251
+
+app.get('/', (req, res) => {
+  res.send('Webpage Created')
+})
+
+app.listen(port, () => {
+  console.log(`Ready To host at : ${port}`)
+}) 
+
+
 client.login(token);
